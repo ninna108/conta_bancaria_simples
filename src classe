@@ -1,0 +1,26 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package conta;
+
+
+public class ContaPoupanca extends Conta {
+    protected double investimentolucro=0.0;
+    
+    public double getinvestimentolucro(){
+        return investimentolucro;
+    }
+    
+    public void setinvestimentolucro(double investimentolucro){
+        this.investimentolucro = investimentolucro;
+    }
+
+    public ContaPoupanca() {
+    }
+    
+    
+  
+            
+    
+}
