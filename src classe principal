@@ -1,0 +1,39 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package conta;
+
+import java.util.Scanner;
+
+public class Conta {
+
+    
+    public static void main(String[] args) {
+        
+        try (Scanner scanner = new Scanner(System.in)) { 
+            System.out.print("numero da conta: ");
+            int numero = scanner.nextInt();
+            scanner.nextLine();
+            System.out.print("nome do titular: ");
+            String titular = scanner.nextLine();
+            System.out.print("saldo inicial");
+            double saldo = scanner.nextDouble();
+            
+            ContaCorrente contacorrente;
+            double investimentolucro = 0;
+            
+            contacorrente = new ContaCorrente(numero, titular, saldo);
+            
+            contacorrente.exibirInformacoes();
+            System.out.print("quanto deseja investir na conta poupança? ");
+            double investimento = scanner.nextDouble();
+            
+            contacorrente.investir(investimento);
+            contacorrente.exibirinformacoespoupanca(investimento, investimentolucro);
+            contacorrente.exibirinformacoesinvestimento(investimento, investimentolucro);
+        }
+        
+    }
+    
+}
