@@ -1,0 +1,70 @@
+Projeto Conta Bancária - Java
+Este é um projeto simples em Java que simula operações básicas de uma conta bancária, incluindo conta corrente e uma simulação de investimento em conta poupança.
+
+ Estrutura do Projeto
+O projeto está dividido em três classes principais, todas no pacote conta:
+
+ ContaCorrente.java
+Classe que representa uma conta corrente. Responsável por:
+
+Armazenar informações da conta (número, titular, saldo)
+
+Permitir depósitos e saques
+
+Exibir informações da conta
+
+Simular um investimento com uma taxa fixa de juros
+
+Calcular e exibir o lucro da aplicação na poupança
+
+ ContaPoupanca.java
+Classe estendida da classe base Conta. No entanto, atualmente não possui implementação funcional significativa além de um atributo para armazenar o lucro do investimento (investimentolucro).
+
+ Esta classe está preparada para futuras extensões específicas de contas poupança.
+
+ Conta.java
+Classe principal com o método main. Executa a seguinte lógica:
+
+Solicita ao usuário os dados da conta: número, titular e saldo inicial.
+
+Cria uma instância de ContaCorrente.
+
+Exibe as informações da conta.
+
+Solicita o valor do investimento na poupança.
+
+Realiza o investimento simulando a aplicação de uma taxa de juros.
+
+Exibe os valores resultantes do investimento e o novo saldo da conta.
+
+Funcionalidades
+Depósito e saque com verificação de valores válidos.
+
+Cálculo de juros simples sobre investimento com taxa fixa (0.4 ou 40%).
+
+Exibição formatada do saldo da conta.
+
+Simulação de conta poupança (ainda em desenvolvimento).
+
+Como Executar
+Compile os arquivos Java:
+
+javac conta/*.java
+Execute a classe principal:
+
+java conta.Conta
+Siga as instruções no console para interagir com o sistema.
+
+Exemplo de Uso
+
+numero da conta: 123
+nome do titular: João
+saldo inicial: 1000.0
+quanto deseja investir na conta poupança? 500.0
+
+a taxa de juros e: 0.4
+O saldo do investimento poupamça e: 500.0
+o saldo total do investimento poupança e: 700.0
+o saldo da conta e: 1200.0
+
+este projeto se encontra na MIT license
