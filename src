@@ -1,0 +1,108 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package conta;
+
+
+import java.text.DecimalFormat;
+
+public class ContaCorrente {
+
+    protected int numero;
+    protected String titular;
+    protected double saldo = 0.0;
+    protected double taxa = 0.4;
+
+    public ContaCorrente(int numero, String titular, double saldo) {
+        this.numero = numero;
+        this.titular = titular;
+        this.saldo = saldo;
+    }
+    
+      public void depositar(double valor) {
+          if(valor>0) {
+              saldo +=valor;
+              System.out.println("deposito de R$"+valor+"realizada com sucesso");
+              System.out.println("saldo da conta: "+saldo);
+          }
+          else {
+              System.out.println("valor do deposito deve ser positivo");
+          }
+      }
+      
+      public void sacar(double valor) {
+          if (valor > 0 && valor <= saldo) {
+              saldo -= valor;
+              System.out.println("saque de R$ "+ valor+ "realizado");
+              System.out.println("saldo da conta R$"+saldo);
+          }
+          else{
+              System.out.println("SAQUE INVALIDO. VERIFIQUE O SALDO");
+          }
+      }
+      
+      public void exibirInformacoes() {
+          DecimalFormat decimalFormat = new DecimalFormat("#.0");
+          System.out.println("numero da conta: "+ numero);
+          System.out.println("titular: "+ titular);
+          System.out.println("saldo: R$ "+ decimalFormat.format(saldo));          
+      }
+      
+    @Override
+      public String toString() {
+          DecimalFormat decimalFormat = new DecimalFormat("#.0");
+          return "numero da conta: " + numero + "\n" +
+                  "titular: " + titular + "\n" +
+                  "saldo: R$ " + decimalFormat.format(saldo);
+      }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public String getTitular() {
+        return titular;
+    }
+
+    public void setTitular(String titular) {
+        this.titular = titular;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public double getTaxa() {
+        return taxa;
+    }
+
+    public void setTaxa(double taxa) {
+        this.taxa = taxa;
+    }
+
+    void investir (double investimento) {
+        saldo-=investimento;
+        System.out.println("a taxa de juros e: "+taxa);
+        System.out.println("O saldo do investimento poupamça e: "+investimento);
+    }
+      
+    void exibirinformacoesinvestimento (double investimento, double investimentolucro ){
+        saldo += investimentolucro;
+        System.out.println("o saldo da conta e: "+ saldo);
+}
+    
+    void exibirinformacoespoupanca (double investimento, double investimentolucro) {
+        investimentolucro = investimento+(investimento * taxa);
+        System.out.println("o saldo total do investimento poupança e: "+ investimentolucro);
+    }
+
+}
